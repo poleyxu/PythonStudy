@@ -6,3 +6,12 @@ print(s1)
 s2 = set([2, 3, 4])
 print(s1 & s2)
 print(s1 | s2)
+
+s1.add(4)
+print(s1)
+
+s2.add(4)
+print(s2)
+
+s1.remove(2)
+print(s1)
