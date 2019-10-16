@@ -46,5 +46,34 @@ def reg2(name, gender, age=6, city='beijing'):
 
 
 print(reg2("poley", "g1"))
+# 只有与默认参数不符的学生才需要提供额外的信息：
 print(reg2("jack", "g2", 7, ))
+# 只有与默认参数不符的学生才需要提供额外的信息：
 print(reg2("xu", "g3", city="hefei"))
+
+
+def add_end(l1=[]):
+    l1.append('END')
+    return l1
+
+
+#  调用一次，增加一个END，Python函数在定义的时候，默认参数L的值就被计算出来了，即[]，因为默认参数L也是一个变量，它指向对象[]，
+#  每次调用该函数，如果改变了L的内容，则下次调用时，默认参数的内容就变了，不再是函数定义时的[]了。
+#  定义默认参数要牢记一点：默认参数必须指向不变对象！
+print(add_end())
+print(add_end())
+print(add_end())
+print(add_end())
+
+
+# 要修改上面的例子，我们可以用None这个不变对象来实现：
+def add_end2(l2=None):
+    if l2 is None:
+        l2 = []
+    l2.append('END')
+    return l2
+
+
+print(add_end2())
+print(add_end2())
+print(add_end2())
